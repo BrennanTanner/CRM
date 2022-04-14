@@ -2094,6 +2094,15 @@ input, select, textarea {
 
 
 /* logo */
+#navText {
+ padding-left: 15px;
+}
+
+#logo0 {
+	width: 30px;
+	padding: 5px 0px 0px 5px;
+	margin-bottom: -6px;
+	}
 
 #logo1 img{
 width: 15vw;
