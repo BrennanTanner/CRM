@@ -2077,7 +2077,6 @@ input, select, textarea {
 				.icon.major {
 					font-size: 1em;
 				}
-
 			}
 
 		.icon.style1 {
@@ -2114,6 +2113,19 @@ padding: 10px 0px;
 	margin-bottom: -18px;
 	}
 
+	@media screen and (max-width: 736px) {
+
+
+		#logo1 img{
+			width: 30vw;
+			}
+
+		#logo2 img{
+			width: 60vw;
+			margin-bottom: -5px;
+			}
+
+	}
 /* Bios */
 
 #bios img{
@@ -2122,6 +2134,18 @@ margin-left: 40px;
 margin-top: -100px;
 	width: 15vw;
 	border-radius: 35px;
+}
+
+@media screen and (max-width: 736px) {
+
+	#bios img{
+		position: absolute;
+		margin-left: 40px;
+		margin-top: -190px;
+			width: 25vw;
+			border-radius: 25px;
+		}
+
 }
 
 /* Image */
