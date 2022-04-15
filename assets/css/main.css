@@ -3923,7 +3923,7 @@ body.is-preload #banner:after {
    display: flex;
 }
 .inner .content {
-   margin-top: 95px;
+   margin-top: 102px;
    margin-left: 100px;
 }
 @media screen and (max-width: 736px) {
