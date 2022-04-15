@@ -43,14 +43,14 @@
          <!-- Banner -->
          <section id="banner">
             <div class="inner">
-               <div id="logo1">               <img src="images/CRM-logo-notxt-white.png" alt="" /></div>
-
-               <div id="logo2"> 
-               <h2><img src="images/CRM-logo-txt-white.png" alt="" /></h2>
+               <div id="logo1">
+                  <img src="images/CRM-logo-notxt-white.png" alt="" />
                </div>
-               <p>
-                 Making Customer Relations Easy.
-               </p>
+
+               <div id="logo2">
+                  <h2><img src="images/CRM-logo-txt-white.png" alt="" /></h2>
+               </div>
+               <p>Making Customer Relations Easy.</p>
                <ul class="actions special">
                   <li><a href="#cta" class="button primary">Contact Us</a></li>
                </ul>
@@ -64,11 +64,13 @@
             <section class="spotlight">
                <div class="image"><img src="images/pic01.jpg" alt="" /></div>
                <div class="content">
-                  <h2>
-                     about us
-                  </h2>
+                  <h2>about us</h2>
                   <p>
-                     At CRM we offer over 10 years of pest control experience from customer retention, sales, servicing, and office management. We understand the pest control industry. Including what owners and managers want when it comes to customer relations.
+                     At CRM we offer over 10 years of pest control experience
+                     from customer retention, sales, servicing, and office
+                     management. We understand the pest control industry.
+                     Including what owners and managers want when it comes to
+                     customer relations.
                   </p>
                </div>
             </section>
@@ -87,17 +89,14 @@
                </div>
             </section>
             <section class="spotlight">
-               <div class="image"><img src="images/pic03.jpg" alt="" />
-               </div>
+               <div class="image"><img src="images/pic03.jpg" alt="" /></div>
                <div id="bios">
-               <img src="images/staley.jpg" alt="" />
-            </div>
+                  <img src="images/staley.jpg" alt="" />
+               </div>
                <div class="content">
-                  <h2>
-                    Contact Us
-                  </h2>
+                  <h2>Contact Us</h2>
                   <p>
-                     staleyvallejo@gmail.com <br><br>Phone: (208)-917-3767
+                     staleyvallejo@gmail.com <br /><br />Phone: (208)-917-3767
                   </p>
                </div>
             </section>
@@ -108,47 +107,104 @@
             <div class="inner">
                <div class="wrapper">
                   <div class="form-header"><h2>Request a quote</h2></div>
-                  <form method="post" name="emailForm" action="submission-sending.php">
+                  <form
+                     action="https://postmail.invotes.com/send"
+                     method="post"
+                     id="email_form"
+                  >
                      <div class="form-row">
                         <div class="form-label">Company Name</div>
                         <div class="form-field">
-                           <input type="text" name="name" />
+                           <input
+                              type="text"
+                              name="subject"
+
+                           />
                         </div>
                      </div>
                      <div class="form-row">
-                        <div class="form-label">Phone</div>
+                        <div class="form-label">Phone Number</div>
                         <div class="form-field">
-                           <input type="tel" name="phone" placeholder="" />
+                           <input
+                              type="tel"
+                              name="extra_phone_number"
+                           />
                         </div>
                      </div>
                      <div class="form-row">
                         <div class="form-label">Email</div>
                         <div class="form-field">
-                           <input type="email" name="email" />
+                           <input type="email" name="reply_to" />
                         </div>
                      </div>
                      <div class="form-row">
                         <div class="form-label">Message</div>
                         <div class="form-field">
                            <textarea
-                              name="message"
-                              rows="5"
-                              cols="50"
+                              name="text"
                            ></textarea>
                         </div>
                      </div>
-
                      <div class="form-row">
-                        <div class="form-label">&nbsp;</div>
+                        <div class="form-label">Number of Current Customers</div>
                         <div class="form-field">
-                           <input 
-                           class="button fit primary"
-                           type="submit" name="message" value="Submit" />
+                           <input
+                              type="text"
+                              name="extra_customer_number"
+                           />
                         </div>
                      </div>
-                  </form>
+                     <input
+                        type="hidden"
+                        name="access_token"
+                        value="nuyxw76dgfj2pe8dfwdb2dal"
+                     />
+                     <!-- return urls can be fully qualified -OR-
+                    start with / for root relative -OR-
+                    start with . for url relative -->
+                     <input
+                        type="hidden"
+                        name="success_url"
+                        value=".?message=Email+Successfully+Sent%21&isError=0"
+                     />
+                     <input
+                        type="hidden"
+                        name="error_url"
+                        value=".?message=Email+could+not+be+sent.&isError=1"
+                     />
 
+                     <!-- set the reply-to address -->
+
+                     <!-- to append extra fields, use the extra_ prefix.
+                   Entries will be appended to your message body. -->
+
+                     <!-- to split your message into 160 chars
+                    for an sms gateway -->
+                     <!-- <input type="hidden"
+                           name="sms_format" value="true" /> -->
+
+                     <input id="submit_form" class="button fit primary" type="submit" value="Send" />
+                     <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+                     <p>
+                        Powered by
+                        <a href="https://postmail.invotes.com" target="_blank"
+                           >PostMail</a
+                        >
+                     </p>
+                  </form>
                </div>
+               <!-- optional, prevents the submit button from being pressed more than once -->
+               <script>
+                  var submitButton = document.getElementById("submit_form");
+                  var form = document.getElementById("email_form");
+                  form.addEventListener("submit", function (e) {
+                     setTimeout(function () {
+                        submitButton.value = "Sending...";
+                        submitButton.disabled = true;
+                     }, 1);
+                  });
+               </script>
+
             </div>
          </section>
 
